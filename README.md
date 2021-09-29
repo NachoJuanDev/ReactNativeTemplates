@@ -9,6 +9,7 @@ All templates were developed by @nacho-11
 
 - [Templates](#templates)
   - [Base](#base)
+- [Useful Links](#useful-links)
 - [Useful Packages](#useful-packages)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
