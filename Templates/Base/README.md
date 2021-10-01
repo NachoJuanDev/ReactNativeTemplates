@@ -56,7 +56,7 @@ const scaleWidth = width / 420
 
 /**
  * Normalize px respect to window width with the scale width:420
- * @param {number} size
+ * @param {number, string} size
  */
 export function normalizePx(size) {
   if (typeof size === 'string') {
