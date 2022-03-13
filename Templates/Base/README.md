@@ -11,6 +11,7 @@
 - [Structure Folder](#structure-folder)
 - [Responsive styles](#responsive-styles)
 - [Eslint and Prettier](#eslint-and-prettier)
+  - [Format Code Action(optional)](#format-code-actionoptional)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -37,132 +38,89 @@ src/
 ## Responsive styles
 
 ```js
-import { Dimensions, PixelRatio } from 'react-native'
-
-const { width, height } = Dimensions.get('window')
-
-const scaleFont = width / 320
-
 /**
  * Normalize Font Size respect to window width with the scale width:320
  * @param {number} size
  */
-export function normalizeFontSize(size) {
-  const newSize = size * scaleFont
-  return Math.round(PixelRatio.roundToNearestPixel(newSize))
+function normalizeFontSize(size) {
+  ...
 }
-
-const scaleWidth = width / 420
 
 /**
  * Normalize px respect to window width with the scale width:420
  * @param {number, string} size
  */
-export function normalizePx(size) {
-  if (typeof size === 'string') {
-    return size
-  }
-  const newSize = size * scaleWidth
-  return Math.round(PixelRatio.roundToNearestPixel(newSize))
+function normalizePx(size) {
+  ...
 }
 
 /**
  * Compute window width * p
  * @param {number} p - 0 < p <= 1
  */
-export const pWidth = p => width * p
-
+function pWidth(p) {
+  ...
+}
 /**
  * Compute window height * p
  * @param {number} p - 0 < p <= 1
  */
-export const pHeight = p => height * p
+function pHeight(p) {
+  ...
+}
 ```
 
 ## Eslint and Prettier
 
-**devDependencies**
+## Eslint and Prettier
 
-```bash
-yarn add -D eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node @react-native-community/eslint-config  eslint-plugin-react
-```
+For Vscode:
 
-**.eslintrc.js**
+- Eslint: [https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- Prettier: [https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-```js
-module.exports = {
-  root: true,
-  env: {
-    es2021: true,
+### Format Code Action(optional)
+
+- Format Code Action(optional): [https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action](https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action)
+
+* Configure Format Code Action:
+
+  - Global
+    - Open `settings.json` at vscode:
+      - `F1` or `Ctrl` + `Shift` + `P` or `CMD` + `Shift` + `P`
+      - Search: “open settings”
+      - Select: “Open Settings **(JSON)”**
+    - Paste the configuration:
+      ```json
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": [
+        "source.formatDocument",
+        "source.fixAll.eslint"
+      ]
+      ```
+  - Workspace (only for the project)
+    - Make a dir: `.vscode`
+    - Make a file into the dir: `settings.json`
+    - Paste the previous configuration
+
+* Set only for `javascript` and `React.js`
+
+  ```json
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.eslint"
+    ]
   },
-  extends: [
-    '@react-native-community',
-    'plugin:react/recommended',
-    'standard',
-    'prettier',
-  ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  plugins: ['@react-native-community', 'react', 'prettier', 'import'],
-  rules: {
-    'prettier/prettier': [
-      'warn',
-      {
-        jsxBracketSameLine: true,
-        singleQuote: true,
-        semi: false,
-        trailingComma: 'all',
-        arrowParens: 'avoid',
-      },
-    ],
-    'import/newline-after-import': [
-      'error',
-      {
-        count: 1,
-      },
-    ],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal'],
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'external',
-            position: 'before',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['react'],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-      },
-    ],
-    'no-console': [
-      'error',
-      {
-        allow: ['warn', 'error'],
-      },
-    ],
-  },
-}
-```
-
-**.prettierrc.js**
-
-```js
-module.exports = {
-  jsxBracketSameLine: true,
-  singleQuote: true,
-  semi: false,
-  trailingComma: 'all',
-  arrowParens: 'avoid',
-}
-```
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      "source.fixAll.eslint"
+    ]
+  }
+  ```

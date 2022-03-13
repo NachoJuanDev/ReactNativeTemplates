@@ -3,31 +3,20 @@ module.exports = {
   env: {
     es2021: true,
   },
-  extends: [
-    '@react-native-community',
-    'plugin:react/recommended',
-    'standard',
-    'prettier',
-  ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  plugins: ['@react-native-community', 'react', 'prettier', 'import'],
+  extends: ['@react-native-community', 'standard', 'prettier'],
+  plugins: ['import', 'prettier'],
   rules: {
     'prettier/prettier': [
       'warn',
       {
-        jsxBracketSameLine: true,
         singleQuote: true,
         semi: false,
         trailingComma: 'all',
         arrowParens: 'avoid',
       },
     ],
+    'arrow-body-style': 'off',
+    'prefer-arrow-callback': 'off',
     'import/newline-after-import': [
       'error',
       {
