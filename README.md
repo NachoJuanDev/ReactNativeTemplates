@@ -2,6 +2,8 @@
 
 All templates were developed by @nacho-11
 
+[PayPal.Me/devnacho11](https://PayPal.Me/devnacho11)
+
 **Table of Contents**
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
