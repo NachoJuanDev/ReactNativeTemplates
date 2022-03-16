@@ -7,6 +7,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+- [How run project](#how-run-project)
 - [Dependencies](#dependencies)
 - [Structure Folder](#structure-folder)
 - [Responsive styles](#responsive-styles)
@@ -14,6 +15,30 @@
   - [Format Code Action(optional)](#format-code-actionoptional)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## How run project
+
+- Install packages
+
+```bash
+yarn install
+```
+
+- Run metro server
+
+```bash
+yarn start
+```
+
+- Run android/ios app
+
+```bash
+# android
+yarn android
+
+# ios
+yarn ios # or use xcode
+```
 
 ## Dependencies
 
@@ -69,8 +94,6 @@ function pHeight(p) {
   ...
 }
 ```
-
-## Eslint and Prettier
 
 ## Eslint and Prettier
 
