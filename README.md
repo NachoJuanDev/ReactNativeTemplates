@@ -12,6 +12,7 @@ All templates were developed by @nacho-11
 - [Templates](#templates)
   - [Base](#base)
   - [Base + Redux + Redux Thunk](#base--redux--redux-thunk)
+- [How-To-Do](#how-to-do)
 - [Useful Links](#useful-links)
 - [Useful Packages](#useful-packages)
 
@@ -26,6 +27,10 @@ Basic template with defined folder structure, JSX, React Navigation, ESLint with
 ## Base + Redux + Redux Thunk
 
 Template with defined folder structure, JSX, React Navigation, ESLint with Prettier and methods for responsive styles and Redux implementation with Redux Thunk.
+
+# How-To-Do
+
+All the instructions to make a project based on the base template.
 
 # Useful Links
 
